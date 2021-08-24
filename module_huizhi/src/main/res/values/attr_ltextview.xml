@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LTextView">
+        <attr name="ltext" format="reference|string" />
+        <attr name="ltextColor" format="integer|reference"/>
+        <attr name="lbackground" format="reference"/>
+        <attr name="a" format="color"/>
+        <attr name="b" format="dimension"/>
+        <attr name="c" format="boolean"/>
+        <attr name="e" format="enum"/>
+        <attr name="f" format="flags"/>
+        <attr name="g" format="float"/>
+        <attr name="h" format="fraction"/>
+<!-- reference 参考某一资源ID @drawable/id
+     color 颜色值 "#ffffff"
+     boolean 布尔值 focusable
+     dimension 尺寸值
+     float 浮点数 透明度
+     integer 整型值
+     string
+     fraction 百分数
+     enum 水平、垂直
+     flag 位或运算 gravity
+     混合属性
+     -->
+    </declare-styleable>
+</resources>

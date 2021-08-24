@@ -1,2 +1,6 @@
+include ':library_base'
+include ':module_huizhi'
+include ':module_zuhe'
+include ':module_jicheng'
 include ':app'
-rootProject.name = "GitClean"
+rootProject.name = "ViewApplication"
