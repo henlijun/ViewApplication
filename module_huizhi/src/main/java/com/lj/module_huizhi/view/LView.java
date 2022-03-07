@@ -20,6 +20,8 @@ import androidx.annotation.UiThread;
  * @Package: com.lj.module_huizhi.view
  * @ClassName: LView
  * @Description: java类作用描述
+ *
+ * 学习View源码，抄袭复写
  * @Author: 李军
  * @CreateDate: 2021/7/22 20:46
  * @UpdateUser: 更新者
