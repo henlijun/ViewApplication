@@ -30,13 +30,13 @@ import com.lj.module_huizhi.R;
  * @UpdateRemark: 更新说明
  * @Version: 1.0
  */
-public class LTextView extends View {
+public class LPaintBaseView extends View {
     private static final String TAG = "LTextView";
     /**
      * 在java代码中new的时候使用
      * @param context
      */
-    public LTextView(Context context) {
+    public LPaintBaseView(Context context) {
         super(context);
     }
 
@@ -45,7 +45,7 @@ public class LTextView extends View {
      * @param context
      * @param attrs
      */
-    public LTextView(Context context, @Nullable AttributeSet attrs) {
+    public LPaintBaseView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -55,7 +55,7 @@ public class LTextView extends View {
      * @param attrs
      * @param defStyleAttr
      */
-    public LTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public LPaintBaseView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         TypedArray typedArray =  context.obtainStyledAttributes(attrs, R.styleable.LTextView);
         String lText = typedArray.getString(R.styleable.LTextView_ltext);
@@ -71,7 +71,7 @@ public class LTextView extends View {
      * @param defStyleAttr
      * @param defStyleRes
      */
-    public LTextView(Context context, @NonNull AttributeSet attributeSet, int defStyleAttr, int defStyleRes){
+    public LPaintBaseView(Context context, @NonNull AttributeSet attributeSet, int defStyleAttr, int defStyleRes){
         super(context,attributeSet,defStyleAttr,defStyleRes);
     }
 
@@ -120,7 +120,6 @@ public class LTextView extends View {
      */
     @Override
     protected void onDraw(Canvas canvas) {
-//        super.onDraw(canvas);
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
         paint.setStrokeJoin(Paint.Join.ROUND);
@@ -157,9 +156,6 @@ public class LTextView extends View {
         path1.moveTo(0,0);
         path1.lineTo(35,80);
         path1.lineTo(100,100);
-//        path1.close();
-//        canvas.drawPath(path1,paint);
         canvas.drawTextOnPath("android2456565151",path1,30,10,paint);
-
     }
 }

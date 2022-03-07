@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <declare-styleable name="LineView">
+        <attr name="skWidth" format="integer"/>
+        <attr name="animatorEnable" format="boolean"/>
+        <attr name="shaderEnable" format="boolean"/>
+        <attr name="linesEnable" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="RectFView">
+        <attr name="skFWidth" format="integer"/>
+        <attr name="strokeColor" format="color|reference"/>
+        <attr name="paintColor" format="color|reference"/>
+        <attr name="paintCap" format="enum">
+            <enum name="butt" value="1"/>
+            <enum name="round" value="2"/>
+            <enum name="square" value="3"/>
+        </attr>
+        <attr name="paintStyle">
+            <enum name="fill" value="1"/>
+            <enum name="stroke" value="2"/>
+            <enum name="fillAndStorke" value="3"/>
+        </attr>
+    </declare-styleable>
     <declare-styleable name="LTextView">
         <attr name="ltext" format="reference|string" />
         <attr name="ltextColor" format="integer|reference"/>
@@ -11,6 +32,7 @@
         <attr name="f" format="flags"/>
         <attr name="g" format="float"/>
         <attr name="h" format="fraction"/>
+    </declare-styleable>
 <!-- reference 参考某一资源ID @drawable/id
      color 颜色值 "#ffffff"
      boolean 布尔值 focusable
@@ -23,5 +45,4 @@
      flag 位或运算 gravity
      混合属性
      -->
-    </declare-styleable>
 </resources>

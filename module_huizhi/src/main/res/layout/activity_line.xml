@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LineActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.lj.module_huizhi.view.LineView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.lj.module_huizhi.view.LineView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:animatorEnable="true" />
+
+            <com.lj.module_huizhi.view.LineView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:shaderEnable="true" />
+
+            <com.lj.module_huizhi.view.LineView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:linesEnable="true" />
+
+            <com.lj.module_huizhi.view.RectFView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:paintCap="butt"
+                app:paintStyle="stroke"
+                app:skFWidth="6"
+                app:strokeColor="#FFFFFF" />
+
+            <com.lj.module_huizhi.view.RectFView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:paintCap="round"
+                app:paintStyle="stroke"
+                app:skFWidth="6"
+                app:strokeColor="#FFFFFF"/>
+
+            <com.lj.module_huizhi.view.RectFView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:paintCap="square"
+                app:paintStyle="stroke"
+                app:skFWidth="6"
+                app:strokeColor="#FFFFFF" />
+
+            <com.lj.module_huizhi.view.RectFView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:paintCap="square"
+                app:paintStyle="fill"
+                app:skFWidth="6"
+                app:strokeColor="#FFFFFF"
+                app:paintColor="#ff0000"/>
+
+            <com.lj.module_huizhi.view.RectFView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:paintCap="square"
+                app:paintStyle="fillAndStorke"
+                app:skFWidth="6"
+                app:strokeColor="#FFFFFF"
+                app:paintColor="#ff0000"/>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
