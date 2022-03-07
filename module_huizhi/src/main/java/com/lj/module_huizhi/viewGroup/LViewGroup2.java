@@ -1,4 +1,4 @@
-package com.lj.module_huizhi.view;
+package com.lj.module_huizhi.viewGroup;
 
 import android.content.Context;
 import android.util.AttributeSet;
