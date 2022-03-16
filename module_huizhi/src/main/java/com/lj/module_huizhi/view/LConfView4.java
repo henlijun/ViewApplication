@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.text.DynamicLayout;
 import android.text.Layout;
 import android.text.SpannableString;
@@ -14,17 +15,22 @@ import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 /**
- * 彩色 字体 SpannableString todo 对应的Span Size度量
+ * Animation
+ * todo
+ * 帧动画
+ * 补间动画：透明、位移、缩放、旋转，xml、合集
+ * 属性动画
  */
-public class LConfView3 extends View {
-    private static final String TAG = "LConfView3";
+public class LConfView4 extends View implements View.OnClickListener {
+    private static final String TAG = "LConfView";
     private String time = "2022年2月12日";
     private boolean isLock = false;
     private String name = "天下乌贼";
@@ -39,19 +45,20 @@ public class LConfView3 extends View {
     private static final String DAY = "日";
     private static final String MONTH = "月";
 
+    private boolean isSwitchCheck = true;
 
-    public LConfView3(Context context) {
+    public LConfView4(Context context) {
         this(context, null);
     }
 
-    public LConfView3(Context context, @Nullable AttributeSet attrs) {
+    public LConfView4(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public LConfView3(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public LConfView4(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         this(context, attrs, defStyleAttr, 0);
     }
-    public LConfView3(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public LConfView4(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
@@ -91,26 +98,37 @@ public class LConfView3 extends View {
         //time
         Rect rect = new Rect();
         paint.getTextBounds(time, 0,time.length(), rect);
-        SpannableString span = new SpannableString("好好学习，天天向上");
-        ForegroundColorSpan foreColor = new ForegroundColorSpan(Color.RED);
-        span.setSpan(foreColor, 0,2, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-        ForegroundColorSpan foreColor2 = new ForegroundColorSpan(Color.GREEN);
-        span.setSpan(foreColor2, 5,7, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        Log.d(TAG, "onDraw: @@@@@@@@@@@@@AAAAAAAAAAAAAAAA" + span.length());
-        TextPaint paint1 = new TextPaint(paint);
-        DynamicLayout dynamicLayout = new DynamicLayout(span,paint1, width,
-                Layout.Alignment.ALIGN_NORMAL, 0, 0, false);
-        dynamicLayout.draw(canvas);
-//        canvas.drawText(time, 0, rect.height(), paint);
-
+        canvas.drawText(time, 0, rect.height(), paint);
 
         //detail
         Rect rect1 = new Rect();
         paint.getTextBounds(otherMsg, 0, otherMsg.length(), rect1);
         canvas.drawText(otherMsg, width - rect1.width(), height - rect1.bottom, paint);
 
-    }
+        //switch
+        int scale = 4;
+        int switchWidth = 52 * scale * 4;
+        int switchHeight = 28 * scale;
+        int switchRadius = 14 * scale;
+        int switchR = 12 * scale;
+        int switchPadding = 2 * scale;
+        if(isSwitchCheck){
+            paint.setColor(Color.BLUE);
+            RectF switchRectF = new RectF(0, height - switchHeight ,switchWidth, height);
+            canvas.drawRoundRect(switchRectF, switchRadius, switchRadius, paint);
+            paint.setColor(Color.WHITE);
+            canvas.drawCircle( (switchWidth - switchPadding - switchR),
+                    height - switchPadding - switchR ,switchR, paint);
+        }else {
+            paint.setColor(Color.GRAY);
+            RectF switchRectF = new RectF(0, height - switchHeight ,switchWidth, height);
+            canvas.drawRoundRect(switchRectF, switchRadius, switchRadius, paint);
+            paint.setColor(Color.WHITE);
+            canvas.drawCircle( switchPadding + switchR,
+                    height - switchPadding - switchR ,switchR, paint);
+        }
 
+    }
 
     private int dp2px(float value){
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, getResources().getDisplayMetrics());
@@ -120,5 +138,24 @@ public class LConfView3 extends View {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, value, getResources().getDisplayMetrics());
     }
 
+    long clickTime = 0l;
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                clickTime = System.currentTimeMillis();
+                break;
+            case MotionEvent.ACTION_UP:
+                onClick(this);
+                return true;
+        }
+        return true;
+    }
 
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(getContext(), "toast",Toast.LENGTH_SHORT).show();
+        isSwitchCheck = !isSwitchCheck;
+        invalidate();
+    }
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LConfView5">
+        <attr name="confBackground" format="color|reference"/>
+        <attr name="confRadius" format="dimension|reference"/>
+        <attr name="confPaddingStart" format="dimension|reference"/>
+        <attr name="confPaddingEnd" format="dimension|reference"/>
+
+
+        <attr name="confName" format="string|reference"/>
+        <attr name="confNameTextSize" format="dimension|reference"/>
+        <attr name="confNameTextColor" format="color|reference"/>
+
+        <attr name="confState" format="enum|reference">
+            <enum name="start" value="1"/>
+            <enum name="end" value="2"/>
+            <enum name="work" value="3"/>
+        </attr>
+
+        <attr name="confTime" format="string|reference"/>
+        <attr name="confTimeColor" format="color|reference"/>
+        <attr name="confTimeSize" format="dimension|reference"/>
+        <attr name="confCode" format="string|reference"/>
+        <attr name="confLock" format="boolean|reference"/>
+
+
+    </declare-styleable>
+</resources>

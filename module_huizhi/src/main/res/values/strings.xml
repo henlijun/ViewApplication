@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">module_huizhi</string>
+
+
+    <!-- ConfView-->
+    <string name="confStart">待开始</string>
+    <string name="confEnd">已结束</string>
+    <string name="confWorking">正在进行</string>
 </resources>

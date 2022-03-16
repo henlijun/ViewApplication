@@ -447,9 +447,9 @@ public class LTextView3 extends View implements ViewTreeObserver.OnPreDrawListen
     public LTextView3(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
 
-        if(getImportantForAutofill() == IMPORTANT_FOR_AUTOFILL_AUTO){
+     /*   if(getImportantForAutofill() == IMPORTANT_FOR_AUTOFILL_AUTO){
             setImportantForAutofill(IMPORTANT_FOR_AUTOFILL_YES);
-        }
+        }*/
 
         setTextInternal("");
         final Resources res = getResources();
@@ -464,7 +464,6 @@ public class LTextView3 extends View implements ViewTreeObserver.OnPreDrawListen
         mMovement = getDefaultMovementMethod();
 
         mTransformation = null;
-        final TextApp
     }
 
     @Override
@@ -475,7 +474,7 @@ public class LTextView3 extends View implements ViewTreeObserver.OnPreDrawListen
     private void setTextInternal(CharSequence text){
         mText = text;
         mSpannable = (text instanceof Spannable) ? (Spannable) text : null;
-        mPrecomputed = (text instanceof PrecomputedText) ? (PrecomputedText) text : null;
+//        mPrecomputed = (text instanceof PrecomputedText) ? (PrecomputedText) text : null;
     }
 
     protected MovementMethod getDefaultMovementMethod() {

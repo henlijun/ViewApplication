@@ -16,12 +16,6 @@ public class HuiZhiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hui_zhi);
-        TextView textView = findViewById(R.id.textView2);
-        textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
-        textView.setSingleLine(true);
-        textView.setSelected(true);
-        textView.setFocusable(true);
-        textView.setFocusableInTouchMode(true);
     }
 
     public void onClickEvent(View view){
@@ -37,6 +31,16 @@ public class HuiZhiActivity extends AppCompatActivity {
             case R.id.button3:
                 //line
                 startActivity(new Intent(this, LineActivity.class));
+                break;
+            case R.id.button4:
+                startActivity(new Intent(this, GroupFlowLayoutActivity.class));
+                break;
+            case R.id.button5:
+                startActivity(new Intent(this, SpanableStringActivity.class));
+                break;
+
+            case R.id.button6:
+                startActivity(new Intent(this, AnimationActivity.class));
                 break;
         }
     }
