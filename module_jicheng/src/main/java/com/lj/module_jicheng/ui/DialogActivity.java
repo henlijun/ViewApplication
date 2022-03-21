@@ -12,6 +12,7 @@ import android.widget.Button;
 import com.lj.module_jicheng.R;
 import com.lj.module_jicheng.databinding.ActivityDialog2Binding;
 import com.lj.module_jicheng.dialog.LBaseDialog;
+import com.lj.module_jicheng.dialog.LFragThemeDialog;
 import com.lj.module_jicheng.dialog.LFragmentDialog;
 
 public class DialogActivity extends AppCompatActivity {
@@ -92,6 +93,12 @@ public class DialogActivity extends AppCompatActivity {
             case R.id.button6:
                 final LBaseDialog bDialog = new LBaseDialog();
                 bDialog.show(getSupportFragmentManager(), "fragmentDialog");
+                break;
+            case R.id.button7:
+                break;
+            case R.id.button8:
+                final LFragThemeDialog fThemeDialog = new LFragThemeDialog();
+                fThemeDialog.show(getSupportFragmentManager(), "fragmentDialog");
                 break;
             default:
         }

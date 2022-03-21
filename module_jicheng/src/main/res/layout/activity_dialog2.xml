@@ -26,7 +26,7 @@
                     android:layout_marginTop="40dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="455465464564565465" />
+                    android:text="451212" />
 
                 <Button
                     android:id="@+id/button3"
@@ -60,6 +60,12 @@
                     android:layout_height="wrap_content"
                     android:onClick="onClick"
                     android:text="base_setting" />
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick"
+                    android:text="dialog_theme" />
             </LinearLayout>
         </ScrollView>
     </FrameLayout>

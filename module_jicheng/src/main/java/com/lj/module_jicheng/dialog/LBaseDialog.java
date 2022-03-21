@@ -24,6 +24,7 @@ import com.lj.module_jicheng.R;
  * @Package: com.lj.module_jicheng.dialog
  * @ClassName: LAlterDialog
  * @Description: java类作用描述
+ *
  * @Author: 李军
  * @CreateDate: 2022/3/16 19:10
  * @UpdateUser: 更新者
@@ -37,7 +38,6 @@ public class LBaseDialog extends DialogFragment {
     private int mGravity;
     // size (matchParent, wrapContent
     private boolean mIsWrapContent;
-    //backGround + corner
 
     public LBaseDialog(){
         super();
@@ -45,16 +45,11 @@ public class LBaseDialog extends DialogFragment {
         mIsWrapContent = false;
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Dialog dialog = getDialog();
-        if(dialog != null){
+        if(dialog != null && mIsWrapContent && mGravity != Gravity.CENTER){
             Window window = dialog.getWindow();
             if(window != null){
                 window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -63,29 +58,26 @@ public class LBaseDialog extends DialogFragment {
                 params.gravity = mGravity;
                 params.width = mIsWrapContent ?
                         ViewGroup.LayoutParams.WRAP_CONTENT: ViewGroup.LayoutParams.MATCH_PARENT;
-                getDialog().getWindow().setAttributes(params);
+                window.setAttributes(params);
             }
         }
-
-        /*if (mContentLayoutId != 0) {
-            return inflater.inflate(mContentLayoutId, container, false);
-        }
-        return null;*/
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
+    public void setGravity(int mGravity) {
+        this.mGravity = mGravity;
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+
+    public void setCanceledOnTouchOutside(boolean cancelable) {
+        getDialog().setCanceledOnTouchOutside(cancelable);
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    public void setIsWrapContent(boolean mIsWrapContent) {
+        this.mIsWrapContent = mIsWrapContent;
     }
+
+
+
+
 }
