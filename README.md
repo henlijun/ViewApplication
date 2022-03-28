@@ -132,4 +132,4 @@ DialogFragment
             login
             choice
             list
-            
+todo 弹框，自定义 滑动，循环 解析 recycleView

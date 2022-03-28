@@ -85,6 +85,19 @@
                 app:skFWidth="6"
                 app:strokeColor="#FFFFFF"
                 app:paintColor="#ff0000"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+                <com.lj.module_huizhi.view.ColorView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"/>
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:background="#00FFFF"
+                    android:layout_gravity="bottom|right"/>
+            </FrameLayout>
 
         </LinearLayout>
     </ScrollView>

@@ -15,10 +15,11 @@
     </style>
 
     <style name="Dialog.Base" parent="Theme.AppCompat.Dialog">
-        <!-- windowIsFloating false-> windowWrapContent（不能） true(default)->windowMatchParent（可被软键盘顶起）-->
+        <!-- windowIsFloating false-> dialogMatchWindow GravityTop windowCloseOnTouchOutside = false
+        （） true(default)->windowMatchParent（可被软键盘顶起）-->
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:gravity">center_vertical</item>
+
     </style>
 
     <style name="Theme.FragDialog.Base" parent="Theme.AppCompat.Dialog">

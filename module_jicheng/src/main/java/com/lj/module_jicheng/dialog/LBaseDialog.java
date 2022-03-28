@@ -1,10 +1,12 @@
 package com.lj.module_jicheng.dialog;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,46 +40,62 @@ public class LBaseDialog extends DialogFragment {
     private int mGravity;
     // size (matchParent, wrapContent
     private boolean mIsWrapContent;
+    private boolean mIsCanceledOnTouchOut;
 
     public LBaseDialog(){
+       this(true);
+    }
+
+    public LBaseDialog(boolean isWrapContent){
         super();
         mGravity = Gravity.CENTER;
-        mIsWrapContent = false;
+        mIsWrapContent = isWrapContent;
+        mIsCanceledOnTouchOut = true;
     }
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Dialog dialog = getDialog();
-        if(dialog != null && mIsWrapContent && mGravity != Gravity.CENTER){
-            Window window = dialog.getWindow();
-            if(window != null){
-                window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                window.getDecorView().setPadding(0,0,0,0);
-                WindowManager.LayoutParams params = window.getAttributes();
-                params.gravity = mGravity;
-                params.width = mIsWrapContent ?
-                        ViewGroup.LayoutParams.WRAP_CONTENT: ViewGroup.LayoutParams.MATCH_PARENT;
-                window.setAttributes(params);
+        if(dialog != null){
+            if(!mIsCanceledOnTouchOut){
+                dialog.setCanceledOnTouchOutside(false);
+            }
+            if(!mIsWrapContent && mGravity != Gravity.CENTER){
+                Window window = dialog.getWindow();
+                if(window != null){
+                    window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                    window.getDecorView().setPadding(dp2px(16),0,dp2px(16),0);
+                    WindowManager.LayoutParams params = window.getAttributes();
+                    params.gravity = mGravity;
+                    params.width = WindowManager.LayoutParams.MATCH_PARENT;
+                    getDialog().getWindow().setAttributes(params);
+                }
             }
         }
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
+
     public void setGravity(int mGravity) {
         this.mGravity = mGravity;
     }
 
-
     public void setCanceledOnTouchOutside(boolean cancelable) {
-        getDialog().setCanceledOnTouchOutside(cancelable);
+        mIsCanceledOnTouchOut = cancelable;
+        if(getDialog() != null)
+            getDialog().setCanceledOnTouchOutside(cancelable);
     }
 
     public void setIsWrapContent(boolean mIsWrapContent) {
         this.mIsWrapContent = mIsWrapContent;
     }
 
-
+    private int dp2px(float value){
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, getResources().getDisplayMetrics());
+    }
 
 
 }
