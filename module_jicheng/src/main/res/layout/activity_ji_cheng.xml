@@ -27,7 +27,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onClick"
-                android:text="Button" />
+                android:text="titlelayout" />
+
+            <com.lj.module_jicheng.view.TitleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:titleText="1234"/>
+            <com.lj.module_jicheng.view.TitleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:titleText="1234"
+                app:titleSubText="12"/>
+            <com.lj.module_jicheng.view.TitleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:titleText="1234"
+               app:titleSubImage="@drawable/dot_red"/>
+            <com.lj.module_jicheng.view.TitleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:titleStyleBlue="true"
+                app:titleText="1234"
+                app:titleSubText="12"/>
+            <com.lj.module_jicheng.view.TitleLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:titleStyleBlue="true"
+                app:titleText="1234"/>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleLayout">
+        <attr name="titleBackground" format="color"/>
+        <attr name="titleBack" format="reference"/>
+        <attr name="titleText" format="string"/>
+        <attr name="titleColor" format="color"/>
+        <attr name="titleSubText" format="string"/>
+        <attr name="titleSubColor" format="color"/>
+        <attr name="titleSubImage" format="reference"/>
+        <attr name="titleStyleBlue" format="boolean"/>
+    </declare-styleable>
+</resources>

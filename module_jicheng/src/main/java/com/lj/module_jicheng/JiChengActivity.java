@@ -22,6 +22,9 @@ public class JiChengActivity extends AppCompatActivity {
             case R.id.button:
                 startActivity(new Intent(this, DialogActivity.class));
                 break;
+            case R.id.button2:
+                startActivity(new Intent(this, DialogActivity.class));
+                break;
             default:
         }
     }
