@@ -1,8 +1,4 @@
-package com.lj.module_jicheng;
-
-import androidx.databinding.DataBindingUtil;
-
-import com.lj.module_jicheng.thread.DingDingUtil;
+package com.lijun.library_animator;
 
 import org.junit.Test;
 
@@ -16,8 +12,6 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-//        assertEquals(4, 2 + 2);
-
-        DingDingUtil.getInstance().start();
+        assertEquals(4, 2 + 2);
     }
 }

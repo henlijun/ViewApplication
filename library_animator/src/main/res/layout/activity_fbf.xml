@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.FBF_Activity">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="逐帧动画"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp" />
+
+        <Button
+            android:id="@+id/oneShotButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="单次" />
+
+        <Button
+            android:id="@+id/moreShotButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="连续" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="shot time"
+            android:inputType="number"
+            android:text="300" />
+
+        <Button
+            android:id="@+id/oneDurationButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="单张时间" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="clear" />
+    </LinearLayout>
+</layout>

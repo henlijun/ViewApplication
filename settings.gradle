@@ -4,3 +4,4 @@ include ':module_zuhe'
 include ':module_jicheng'
 include ':app'
 rootProject.name = "ViewApplication"
+include ':library_animator'
