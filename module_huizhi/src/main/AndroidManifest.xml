@@ -9,12 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ViewApplication">
-        <activity android:name=".ui.AnimationActivity"></activity>
+        <activity
+            android:name=".ui.ViewLifeCycleActivity"
+            android:exported="false" />
+        <activity android:name=".ui.AnimationActivity" />
         <activity android:name=".ui.SpanableStringActivity" />
         <activity android:name=".ui.GroupFlowLayoutActivity" />
         <activity android:name=".ui.WatchActivity" />
         <activity android:name=".ui.LTextViewActivity" />
-        <activity android:name=".ui.LineActivity"/>
+        <activity android:name=".ui.LineActivity" />
         <activity android:name=".ui.HuiZhiActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

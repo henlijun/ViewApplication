@@ -56,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onClickEvent"
-                android:text="Button" />
+                android:text="生命周期" />
 
             <Button
                 android:id="@+id/button7"
