@@ -1,5 +1,9 @@
 package com.lj.module_jicheng;
 
+import androidx.databinding.DataBindingUtil;
+
+import com.lj.module_jicheng.thread.DingDingUtil;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -12,6 +16,8 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+//        assertEquals(4, 2 + 2);
+
+        DingDingUtil.getInstance().start();
     }
 }

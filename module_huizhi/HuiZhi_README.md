@@ -37,7 +37,91 @@
     15. path
 2. 常见View自绘
 3. 常见Layout自会
-4. 图表数据刷新动效，渐变色，动效，多色等  
+4. 图表数据刷新动效，渐变色，动效，多色等
+
+
+## Activity & Fragment & View 生命周期
+
+### Activity
+
+> onCreate()
+>
+> onStart()
+> onResume()
+> onPause()
+>
+> onStop()
+> onDestroy()
+
+### Fragment
+
+> onAttach()
+> onCreate()
+> onCreateView()
+> onActivityCreated()
+>
+> onStart()
+> onResume()
+> onPause
+>
+> onDestroyView()
+> onDestroy()
+> onDetach()
+
+### lifecycleState
+
+> initialized
+> created
+> started
+> resumed
+> destroyed
+
+### View
+
+> onFinishInflate()
+> onMeasure()
+> onLayout()
+> onSizeChanged()
+> onDraw()
+> onKeyDown()
+> onKeyUp()
+> onTrackballEvent()
+> onTouchEvent()
+> onFocusChanged()
+> onWindowFocusChanged()
+> onAttachedToWindow()
+> onDetachedFromWindow()
+> onWindowVisibilityChanged()
+
+#### Activity & View
+
+##### Activity从xml文件中加载View
+
+
+| Activity | View              |
+| ---------- | ------------------- |
+| onCreate | Constructors    |
+|          | onFinishInflate |
+| onStart |     |
+| onResume | onAttachedToWindow |
+|           | onWindowVisibilityChanged |
+
+##### Activity通过addView 动态加载View
+
+##### Activity & View， focus 变化
+
+##### Activity & View， key 变化
+
+##### Activity & View， touch 变化
+
+##### Activity被finish时View变化
+
+##### Activity 到后台时View的变化
+
+##### Activity ,restart 到后台时View的变化
+
+
+
 
 
 1. 自定义  

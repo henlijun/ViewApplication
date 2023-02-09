@@ -2,6 +2,12 @@ package com.lj.module_zuhe;
 
 import org.junit.Test;
 
+import java.io.IOException;
+
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
+
+
 import static org.junit.Assert.*;
 
 /**
@@ -10,8 +16,12 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+    private static final String TAG = "ExampleUnitTest";
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void addition_isCorrect() throws IOException {
+//        assertEquals(4, 2 + 2);
     }
+
+
+
 }

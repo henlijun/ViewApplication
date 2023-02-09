@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="sequentially">
+    <animator />
+
+    <objectAnimator
+        android:duration="3000"
+        android:propertyName="alpha"
+        android:valueFrom="0.0f"
+        android:valueTo="1.0f"
+        android:valueType="floatType"/>
+
+    <set >
+        <objectAnimator
+            android:duration="3000"
+            android:propertyName="alpha"
+            android:valueFrom="0.0f"
+            android:valueTo="1.0f"
+            android:valueType="floatType"/>
+    </set>
+
+    <propertyValuesHolder />
+
+</set>
+
+<!-- ViewPropertyAnimator是支持连缀用法的，将所
+                        有想要组合的动画通过这种连缀的式拼接起来，这样全部动画就都会一起被执行；
+                        等到所有在ViewPropertyAnimator上设置的方法都执行完毕后，动画就会自动启动。当然如果不想使用这一默认
+                        机制的话，我们也可以显式地调用start()方法来启动动画
+————————————————
+版权声明：本文为CSDN博主「weixin_45558166」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_45558166/article/details/110310651-->

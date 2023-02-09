@@ -40,7 +40,7 @@ public class HuiZhiActivity extends AppCompatActivity {
                 break;
 
             case R.id.button6:
-                startActivity(new Intent(this, AnimationActivity.class));
+                startActivity(new Intent(this, ViewLifeCycleActivity.class));
                 break;
         }
     }
