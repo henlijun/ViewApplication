@@ -1,10 +1,10 @@
 ## 2022-02-27
-1. 自定义
-    View | SurfView: onMeasure onDraw 控件
-    ViewGroup | Layout: onMeasure onLayout 组件
+1. 自定义  
+    View | SurfView: onMeasure onDraw 控件  
+    ViewGroup | Layout: onMeasure onLayout 组件  
 
-    教程 FrameLayout
-        onMeasure
+    教程 FrameLayout  
+        onMeasure  
             度量子View
                 度量最大子View 的宽高
             度量自己
@@ -74,7 +74,7 @@ Dialog : 继承Object, 可异步调用，不阻塞ui线程
                 3.1.3 TimePickerDialog
             3.2 CharacterPickerDialog
             
-DialogFragment
+DialogFragment  
     归属于 FragmentManager 管理，返回键等
     
         <style name="Dialog.Base" parent="Theme.AppCompat.Dialog">
